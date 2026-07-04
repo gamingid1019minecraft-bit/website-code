@@ -1,0 +1,59 @@
+/* ==========================================================================
+   IlmCore AI — register.css
+   ========================================================================== */
+
+.auth-card.register-card {
+  max-width: 460px;
+}
+
+.password-strength {
+  display: flex;
+  gap: 5px;
+  margin-top: 8px;
+}
+.password-strength .bar {
+  flex: 1;
+  height: 4px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.08);
+  transition: background 220ms var(--ease);
+}
+.password-strength.weak .bar:nth-child(1) { background: var(--danger); }
+.password-strength.medium .bar:nth-child(1),
+.password-strength.medium .bar:nth-child(2) { background: #f0b34e; }
+.password-strength.strong .bar { background: var(--success); }
+
+.terms-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 4px 0 20px;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+.terms-row input {
+  appearance: none;
+  width: 17px; height: 17px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  border-radius: 5px;
+  border: 1.5px solid var(--glass-border);
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  position: relative;
+  transition: all 180ms var(--ease);
+}
+.terms-row input:checked {
+  background: linear-gradient(135deg, var(--blue-soft), var(--purple));
+  border-color: transparent;
+}
+.terms-row input:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 4px; height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
